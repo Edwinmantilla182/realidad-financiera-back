@@ -19,7 +19,7 @@ origins = [
 "http://localhost", "http://localhost:8080", "https://realidad-financiera-front.herokuapp.com"
 ]
 api.add_middleware(
-CORSMiddleware, allow_origins=origins,
+CORSMiddleware, allow_origins=["*"],
 allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
 
