@@ -16,7 +16,7 @@ import datetime
 from fastapi.middleware.cors import CORSMiddleware
 origins = [
 "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
-"http://localhost", "http://localhost:8080","https://realidad-financiera-back.herokuapp.com/"
+"http://localhost", "http://localhost:8080", "https://realidad-financiera-front.herokuapp.com"
 ]
 api.add_middleware(
 CORSMiddleware, allow_origins=origins,
@@ -42,6 +42,8 @@ async def get_balance(username: str):
                             detail="El usuario no existe")
     user_out = UserOut(**user_in_db.dict())
     return user_out
+
+
 
 @api.put("/user/transaction/")
 async def make_transaction(transaction_in: TransactionIn):
