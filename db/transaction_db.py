@@ -12,14 +12,18 @@ class TransactionInDB(BaseModel):
 
 
 database_transactions = []
-cuentas = []
-
-
 generator = {"id":0}
+
 def save_transaction(transaction_in_db: TransactionInDB):
     generator["id"] = generator["id"] + 1
     transaction_in_db.id_transaction = generator["id"]
     database_transactions.append(transaction_in_db)
     return transaction_in_db
 
+def get_transactions(username: str):
+    transactions = []
+    for t in database_transactions:
+        if t.username = username:
+            transactions.append(t)
+    return transactions
 

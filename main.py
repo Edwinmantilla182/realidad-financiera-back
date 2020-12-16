@@ -6,7 +6,7 @@ from db.user_db import UserInDB
 from db.user_db import update_user, get_user
 
 from db.transaction_db import TransactionInDB
-from db.transaction_db import save_transaction
+from db.transaction_db import save_transaction, get_transactions
 
 from models.user_models import UserIn, UserOut
 from models.transaction_models import TransactionIn, TransactionOut
@@ -43,7 +43,15 @@ async def get_balance(username: str):
     user_out = UserOut(**user_in_db.dict())
     return user_out
 
+@api.get("/user/transactions/{username}")
+async def list_transactions(usernam : str):
+    transactions_in_db = get_transactions(username)
+    transactions_out = []
+    for t in transactions_in_db:
+        t_out = TransactionOut(**t.dict())
+        transactions_out.append(t_out)
 
+    return transactions_out
 
 @api.put("/user/transaction/")
 async def make_transaction(transaction_in: TransactionIn):
