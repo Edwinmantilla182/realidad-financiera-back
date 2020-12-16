@@ -23,7 +23,7 @@ def save_transaction(transaction_in_db: TransactionInDB):
 def get_transactions(username: str):
     transactions = []
     for t in database_transactions:
-        if t.username = username:
+        if t.username == username:
             transactions.append(t)
     return transactions
 
