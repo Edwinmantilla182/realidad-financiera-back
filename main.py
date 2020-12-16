@@ -44,15 +44,15 @@ async def get_balance(username: str):
 
     return user_out
 
-#@api.get("/user/transactions/{username}")
-#async def list_transactions(usernam : str):
- #   transactions_in_db = get_transactions(username)
-  #  transactions_out = []
-   # for t in transactions_in_db:
-    #    t_out = TransactionOut(**t.dict())
-     #   transactions_out.append(t_out)
+@api.get("/user/transactions/{username}")
+async def list_transactions(username : str):
+    transactions_in_db = get_transactions(username)
+    transactions_out = []
+    for t in transactions_in_db:
+        t_out = TransactionOut(**t.dict())
+        transactions_out.append(t_out)
 
-    #return transactions_out
+    return transactions_out
 
 @api.put("/user/transaction/")
 async def make_transaction(transaction_in: TransactionIn):
@@ -70,4 +70,6 @@ async def make_transaction(transaction_in: TransactionIn):
     transaction_in_db = save_transaction(transaction_in_db)
     transaction_out = TransactionOut(**transaction_in_db.dict())
     return transaction_out
+
+
 
