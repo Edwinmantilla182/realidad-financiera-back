@@ -61,7 +61,6 @@ async def make_transaction(transaction_in: TransactionIn):
                             detail="El usuario no existe")
     
     user_in_db.balance = user_in_db.balance + transaction_in.income
-    update_user(user_in_db)
     user_in_db.balance = user_in_db.balance - transaction_in.expense
     update_user(user_in_db)
 
