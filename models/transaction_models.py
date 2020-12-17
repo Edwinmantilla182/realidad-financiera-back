@@ -8,10 +8,10 @@ class TransactionIn(BaseModel):
     expense: int
 
 class TransactionOut(BaseModel):
-    id_transaccion: int
-    usuario: str
+    id_transaction: int
+    username: str
     cuenta: str
-    fecha: datetime
-    ingreso: int
-    egreso: int
-    balance: int
+    date: datetime
+    income: int
+    expense: int
+    actual_balance: int
