@@ -11,7 +11,7 @@ class TransactionOut(BaseModel):
     id_transaction: int
     username: str
     descripcion: str
-    date: datetime
+    fecha: datetime
     ingreso: int
     egreso: int
     actual_balance: int
