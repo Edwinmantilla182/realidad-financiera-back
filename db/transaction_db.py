@@ -5,7 +5,7 @@ class TransactionInDB(BaseModel):
     id_transaction: int = 0
     username: str
     descripcion: str
-    fecha: datetime = datetime.now()
+    date: datetime = datetime.now()
     ingreso: int
     egreso: int
     actual_balance: int
