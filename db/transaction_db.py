@@ -4,10 +4,10 @@ from pydantic import BaseModel
 class TransactionInDB(BaseModel):
     id_transaction: int = 0
     username: str
-    cuenta: str
-    date: datetime = datetime.now()
-    income: int
-    expense: int
+    descripcion: str
+    fecha: datetime = datetime.now()
+    ingreso: int
+    egreso: int
     actual_balance: int
 
 database_transactions = []

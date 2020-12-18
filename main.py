@@ -61,8 +61,8 @@ async def make_transaction(transaction_in: TransactionIn):
         raise HTTPException(status_code=404,
                             detail="El usuario no existe")
     
-    user_in_db.balance = user_in_db.balance + transaction_in.income
-    user_in_db.balance = user_in_db.balance - transaction_in.expense
+    user_in_db.balance = user_in_db.balance + transaction_in.ingreso
+    user_in_db.balance = user_in_db.balance - transaction_in.egreso
     update_user(user_in_db)
 
     transaction_in_db = TransactionInDB(**transaction_in.dict(), actual_balance = user_in_db.balance)

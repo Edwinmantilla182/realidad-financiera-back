@@ -3,15 +3,15 @@ from datetime import datetime
 
 class TransactionIn(BaseModel):
     username: str
-    cuenta: str
-    income: int
-    expense: int
+    descripcion: str
+    ingreso: int
+    egreso: int
 
 class TransactionOut(BaseModel):
     id_transaction: int
     username: str
-    cuenta: str
-    date: datetime
-    income: int
-    expense: int
+    descripcion: str
+    fecha: datetime
+    ingreso: int
+    egreso: int
     actual_balance: int
