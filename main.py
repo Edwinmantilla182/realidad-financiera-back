@@ -34,6 +34,7 @@ async def auth_user(user_in: UserIn):
                             detail="Error de autenticacion")
     return {"Autenticado": True}
 
+
 @api.get("/user/balance/{username}")
 async def get_balance(username: str):
     user_in_db = get_user(username)
