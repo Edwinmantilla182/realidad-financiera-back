@@ -16,5 +16,3 @@ class TransactionOut(BaseModel):
     egreso: int
     actual_balance: int
 
-    class Config:
-        orm_mode = True
