@@ -30,7 +30,7 @@ async def auth_user(user_in: UserIn):
         raise HTTPException(status_code=404,
                             detail="El usuario no existe")
     if user_in_db.password != user_in.password: 
-        raise HTTPException(status_code=401, 
+        raise HTTPException(status_code=403, 
                             detail="Error de autenticacion")
     return {"Autenticado": True}
 
